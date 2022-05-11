@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nodejs Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <!-- Node服务Demo 有问题可联系v_xhhzhang或v_xhhzhang@tencent.com -->
+        <h3>Node.js Demo</h3>
+    </header>
+
+    <section class="warp">
+
+        <!-- Websocket 聊天室 -->
+        <section class="model websocket-server">
+            <h4>1. Websocket服务(多人聊天室, 可同时打开多个该页面模拟多人聊天)</h4>
+            用户名: <span class="ws-chat-username" id="ws-chat-username"></span>
+            <input type="text" placeholder="请输入你的ID" id="ws-chat-username-input">
+            <button onclick="websocketServer.startWebsocket();" id="ws-login">登入聊天室</button>
+            <button onclick="websocketServer.closeWebsocket();">登出</button>
+            <br><br>
+            <div class="ws-chat-screen" id="ws-chat-screen">
+                <p class="ws-message-system">系统消息: 服务待启动...</p>
+            </div>
+            <input type="text" class="ws-input" id="ws-input" placeholder="请输入发送内容, 回车可直接发送, 点击ID可以发送私信">
+            <button onclick="websocketServer.sendMsg();">发送消息</button>
+        </section>
+
+        <!-- RESTFUL API-->
+        <section class="model rest-api">
+            <h4>2. RESTFUL API服务(mongoDb)</h4>
+            <p>
+                DB: demo<br>
+                Schema: Login<br>
+                DB数据模型: {name: String, password: String}
+            </p><br>
+
+            <div class="rest-api-get">
+                查询:
+                name: <input type="text" class="rest-input" id="get-name">
+                <button onclick="restful.sendGet();">GET</button><br><br>
+            </div>
+
+            <div class="rest-api-post">
+                修改:
+                name: <input type="text" class="rest-input" id="post-name">
+                password: <input type="text" class="rest-input" id="post-password">
+                <button onclick="restful.sendPost();">POST</button> <span class="tips" id="post-tip"></span><br><br>
+            </div>
+
+            <div class="rest-api-put">
+                添加:
+                name: <input type="text" class="rest-input" id="put-name">
+                password: <input type="text" class="rest-input" id="put-password">
+                <button onclick="restful.sendPut();">PUT</button> <span class="tips" id="put-tip"></span><br><br>
+            </div>
+
+            <div class="rest-api-delete">
+                删除:
+                name: <input type="text" class="rest-input" id="delete-name">
+                <button onclick="restful.sendDelete();">DELETE</button> <span class="tips" id="delete-tip"></span><br><br>
+            </div>
+
+            <p>result: <div class="rest-api-result" id="rest-api-result"></div>
+            </p>
+        </section>
+
+        <!-- 图片上传模块 -->
+        <section class="model file-uploader">
+            <h4>3. 图片上传(支持多图上传)</h4>
+            <div class="file-content">
+                <input class="file-input" type="file" value="" id="upload-input" name="files" onchange="uploader.handleFileSelect(this)"
+                    multiple>
+                <p class="file-tip" id="file-tip"></p>
+                <div class="file-upper" onclick="uploader.selectFiles()" title="点我选择文件">
+                    <i class="file-add-icon"></i>
+                </div>
+                <div class="file-preview">
+                    <ul class="file-preview-list" id="file-preview-list"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXCEL与JSON互转 -->
+        <section class="model ej-switch">
+            <h4>4. EXCEL与JSON互转</h4>
+            <input class="ej-input" type="file" onchange="ej.handleFileSelect(this);">
+            <button onclick="ej.goSwitch();">转换并下载</button>
+            <p class="ej-tip" id="ej-tip"></p>
+        </section>
+
+    </section>
+
+    <!-- 第三方lib代码 -->
+    <script type="text/javascript" src="lib/socket.io.js"></script>
+    <script type="text/javascript" src="lib/download.js"></script>
+
+    <!-- 模块代码 -->
+    <script type="text/javascript" src="js/upload.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/websocket.js"></script>
+    <script type="text/javascript" src="js/ej.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+
+header{
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    background: #5CACEE;
+    background-size: cover;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.warp{
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+
+.model{
+    margin-top: 20px;
+    width: 50%;
+    min-width: 600px;
+}
+
+.tips{
+    color: red;
+}
+
+.file-input{
+    display: none;
+}
+
+.file-tip{
+    color: orange;
+}
+
+.file-content{
+    height: 110px;
+}
+
+.file-upper, .file-add-icon{
+    width: 100px;
+    height: 100px;
+}
+
+.file-upper{
+    display: inline-block;
+    background: #FFF;
+    border: 1px solid #CCC;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.file-add-icon{
+    display: block;
+    background: #fff no-repeat center;
+    background-image: linear-gradient(to top, #CCC, #CCC), linear-gradient(to top, #CCC, #CCC);
+    background-size: 25px 3px, 3px 25px;
+}
+
+.file-add-icon:hover{
+    background-image: linear-gradient(to top, #AAA, #AAA), linear-gradient(to top, #AAA, #AAA);
+}
+
+.file-preview{
+    display: inline-block;
+    height: 110px;
+    position: relative;
+    top: 8px;
+}
+
+.file-preview-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.file-preview-box{
+    float: left;
+    margin: 5px 5px 5px 0;
+}
+
+.file-preview-box img{
+    width: 100px;
+    height: 100px;
+}
+
+.rest-input{
+    width: 80px;
+}
+
+.rest-api-result{
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.ws-chat-screen{
+    width: 500px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid #CCC;
+}
+
+.ws-chat-screen p{
+    margin: 3px;
+    font-size: 12px;
+}
+
+.ws-input{
+    width: 428px;
+}
+
+.ws-chat-username{
+    display: none;
+}
+
+.ws-message-system{
+    color: #BBBBBB;
+}
+
+.ws-message-broadcast{
+    color: orange;
+}
+
+.ws-message-message{
+    color: #000000;
+}
+
+.ws-message-private{
+    color: #836FFF;
+}
+
+.ej-tip{
+    color: orange;
+}
